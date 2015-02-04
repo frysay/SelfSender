@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mail_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:isScrollContainer="true"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/separator_accept"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/app_layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/separator_accept"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:onClick="appMessage"
+        android:text="@string/select_contact" />
+
+    <EditText
+        android:id="@+id/app_layout_subject"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:hint="@string/write_mail_subject" />
+
+    <EditText
+        android:id="@+id/app_layout_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:hint="@string/write_mail_text" />
+
+    <Button
+        android:id="@+id/app_layout_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/button_accept" />
+
+</RelativeLayout>

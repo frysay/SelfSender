@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.selfsender"
+    android:versionCode="1"
+    android:versionName="0.3.4" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <permission
+        android:name="com.selfsender.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.selfsender.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo" >
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAQ5t8m-XFAyi5jnrBdX0EPQOxyzsXAILM" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.selfsender.ShowStoredMessages"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.selfsender.broadcasts.OnBootSet" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.selfsender.broadcasts.Wakerup"
+            android:process=":remote_wakerup" >
+        </receiver>
+        <receiver
+            android:name="com.selfsender.broadcasts.GpsInit"
+            android:process=":remote_gpsinit" >
+        </receiver>
+
+        <activity
+            android:name="com.selfsender.ViewMessage"
+            android:label="@string/title_view_message"
+            android:parentActivityName="com.selfsender.ShowStoredMessages"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.selfsender.ShowStoredMessages" />
+        </activity>
+        <activity
+            android:name="com.selfsender.MessageDealer"
+            android:label="@string/title_message_dealer"
+            android:parentActivityName="com.selfsender.ShowStoredMessages"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.selfsender.ShowStoredMessages" />
+        </activity>
+
+        <receiver android:name="com.selfsender.ShowStoredMessages$MyBroadcastReceiver" >
+        </receiver>
+
+        <service
+            android:name="com.selfsender.ProximityService"
+            android:enabled="true"
+            android:exported="false"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/service_name"
+            android:process=":remote_proximityservice" >
+            <intent-filter>
+                <action android:name="android.location.PROVIDERS_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.selfsender.structures.Dialog"
+            android:label="@string/title_dialog"
+            android:parentActivityName="com.selfsender.ShowStoredMessages"
+            android:theme="@android:style/Theme.Dialog" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.selfsender.ShowStoredMessages" />
+        </activity>
+    </application>
+
+</manifest>

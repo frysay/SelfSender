@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Rl_date_gps"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="10dp"
+    android:isScrollContainer="true" >
+
+    <fragment
+        android:id="@+id/map_date_gps"
+        android:name="com.selfsender.MessageDealer"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        class="com.google.android.gms.maps.MapFragment" />
+
+    <EditText
+        android:id="@+id/location_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_date_gps"
+        android:hint="@string/location_name"
+        android:imeOptions="actionSearch"
+        android:inputType="text" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/location_name"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/Date_Picker"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/separator"
+        android:layout_toLeftOf="@+id/Time_Picker"
+        android:onClick="showDatePickerDialog"
+        android:text="@string/pick_date" />
+
+    <Button
+        android:id="@id/Time_Picker"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/separator"
+        android:onClick="showTimePickerDialog"
+        android:text="@string/pick_time" />
+
+    <View
+        android:id="@+id/separator2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/Time_Picker"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/dealer_button_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/separator2"
+        android:onClick="appChooser"
+        android:text="@string/select_app" />
+
+</RelativeLayout>

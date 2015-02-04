@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Rl_gps"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="10dp"
+    android:isScrollContainer="true" >
+
+    <fragment
+        android:id="@+id/map_gps"
+        android:name="com.selfsender.MessageDealer"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        class="com.google.android.gms.maps.MapFragment" />
+
+    <EditText
+        android:id="@+id/location_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_gps"
+        android:hint="@string/location_name"
+        android:imeOptions="actionSearch"
+        android:inputType="text" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/location_name"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/dealer_button_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/separator"
+        android:onClick="appChooser"
+        android:text="@string/select_app" />
+
+</RelativeLayout>

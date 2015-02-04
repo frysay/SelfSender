@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Selfsender</string>
+    <string name="text_title">Title</string>
+    <string name="pick_date">Date</string>
+    <string name="pick_time">Time</string>
+    <string name="button_accept">Accept</string>
+    <string name="desc">Contact photo</string>
+    <string name="title_view_message">Message</string>
+    <string name="menu_all">All</string>
+    <string name="menu_gps_date">Gps/Date</string>
+    <string name="menu_date">Date</string>
+    <string name="menu_gps">Gps</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_edit">Edit</string>
+    <string name="new_message">New Message</string>
+    <string name="title_message_dealer">Message Dealer</string>
+    <string name="select_app">Select an app</string>
+    <string name="write_sms_text">Type your message</string>
+    <string name="write_mail_subject">Type your subject</string>
+    <string name="write_mail_text">Type your message</string>
+    <string name="update_info">Update Contacts Info</string>
+    <string name="title_dialog">Dialog</string>
+    <string name="set_default">Set Default</string>
+    <string name="select_contact">Select the contact</string>
+    <string name="service_name">Proximity Service</string>
+    <string name="location_name">Type the location name</string>
+    <string name="service">Service</string>
+
+</resources>
